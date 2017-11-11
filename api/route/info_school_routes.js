@@ -7,8 +7,7 @@ module.exports = function(app)
 
 
 	app.route('/')
-		.get(info_school.list_all_students)
-		.post(info_school.create_a_student);
+		.get(info_school.welcome);
 
 	app.route('/students')
 		.get(info_school.list_all_students)

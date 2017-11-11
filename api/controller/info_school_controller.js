@@ -1,7 +1,17 @@
 'use strict'
 
+
+
 var mongoose = require('mongoose'),
-	student = mongoose.model('Students');
+	student = mongoose.model('Students'),
+	express = require("express");
+
+var app = express();
+
+exports.welcome = function(req, res)
+{
+	res.render('welcome.ejs');
+}
 
 exports.list_all_students = function(req, res)
 {
@@ -11,7 +21,11 @@ exports.list_all_students = function(req, res)
 		{
 			res.send(err);		
 		}
-		res.json(student);
+		// res.json(student);
+		app.get("/students", function(req, res)
+		{
+			res.render("list_all_students.ejs");
+		});
 	});
 };
 
@@ -25,7 +39,11 @@ exports.create_a_student = function(req, res)
 		{
 			res.send(err);
 		}
-		res.json(student);
+		// res.json(student);
+		app.post("/students", function(req, res)
+		{
+			res.render("list_all_students.ejs");
+		});
 	});
 };
 
