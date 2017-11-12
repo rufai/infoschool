@@ -7,15 +7,18 @@ module.exports = function(app)
 
 
 	app.route('/')
-		.get(info_school.welcome);
+		.get(info_school.create_a_student);
 
+	app.route('/create')
+		.get(info_school.create_a_student);
+	
 	app.route('/students')
 		.get(info_school.list_all_students)
-		.post(info_school.create_a_student);
+		.post(info_school.list_all_students);
 
 	app.route('/students/:studentId')
 		.get(info_school.read_a_student)
-		.post(info_school.update_a_student)
 		.delete(info_school.delete_a_student);
 
+	
 };

@@ -8,43 +8,66 @@ var mongoose = require('mongoose'),
 
 var app = express();
 
-exports.welcome = function(req, res)
+function processFormFields(req, res)
 {
-	res.render('welcome.ejs');
+
 }
 
 exports.list_all_students = function(req, res)
 {
-	student.find({}, function(err, student) 
+
+	if (req.method.toLowerCase() == "get")
 	{
-		if(err)
-		{
-			res.send(err);		
-		}
+		console.log("function list_all_students")
 		// res.json(student);
-		app.get("/students", function(req, res)
+
+		student.find({}, function(err, student) 
 		{
-			res.render("list_all_students.ejs");
+			if(err)
+			{
+				res.send(err);		
+			}
+			
+			res.render("list_all_students.ejs", {students : student});
 		});
-	});
+	}else
+	{
+		var new_student = new student(req.body);
+
+		new_student.save( function(err, student) 
+		{
+			if (err)
+			{
+				res.send(err);
+			}
+			res.json(student);
+		});		
+	}
+
+// else
+	// {
+	// 	student.find({}, function(err, student) 
+	// 	{
+	// 		if(err)
+	// 		{
+	// 			res.send(err);		
+	// 		}
+	// 		app.get("/students", function(req, res)
+	// 		{
+	// 			res.render("list_all_students.ejs");
+	// 		});
+	// 	});
+	// }
 };
+
 
 exports.create_a_student = function(req, res)
 {
-	var new_student = new student(req.body);
 
-	new_student.save( function(err, student) 
-	{
-		if (err)
-		{
-			res.send(err);
-		}
-		// res.json(student);
-		app.post("/students", function(req, res)
-		{
-			res.render("list_all_students.ejs");
-		});
-	});
+	console.log(req.method);
+	
+	res.render("create_a_student.ejs");
+	
 };
 
 exports.read_a_student =  function(req, res)
