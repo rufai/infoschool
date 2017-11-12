@@ -21,8 +21,4 @@ app.use(bodyParser.json());
 routes(app);
 app.listen(port);
 
-http.listen(process.env.PORT || 3000, function(){
-  console.log('listening on', http.address().port);
-});
-
 console.log("Test listening port at " + port);
