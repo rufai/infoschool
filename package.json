@@ -1,30 +1,31 @@
 {
-  "name": "info_school",
+  "name": "infoschool",
   "version": "1.0.0",
   "description": "simple school information management system",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "main": "server.js",
-  "keywords": [
-    "school",
-    "information",
-    "management",
-    "student",
-    "CRUD"
-  ],
-  "author": "rufai mustopha",
-  "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.0",
     "nodemon": "^1.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm run start"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rufai/infoschool"
+    "url": "git+https://github.com/rufai/infoschool.git"
   },
-  "dependencies": {
-    "express": "^4.16.2",
-    "mongoose": "^4.13.0"
-  }
+  "keywords": [
+    "school",
+    "CRUD",
+    "student"
+  ],
+  "author": "rufai mustopha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rufai/infoschool/issues"
+  },
+  "homepage": "https://github.com/rufai/infoschool#readme"
 }
