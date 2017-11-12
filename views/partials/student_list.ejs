@@ -1,0 +1,29 @@
+
+
+<header>
+	<p>List of all students</p>
+	<hr>
+</header>
+
+var students = <%-JSON.stringify(students)%>
+
+<table>
+	  <tr>
+	    <th>&nbsp;</th>
+	    <th>Name</th>
+	    <th>School</th>
+	    <th>Course<h/th>
+	    <th>Edit</th>
+	    <th>Delete</th>
+	  </tr>
+	<% students.forEach( function (student) { %>
+		<tr>
+			<td><%= student.id %></td>
+			<td><%= student.student_name %></td>
+			<td><%= student.school_name %></td>
+			<td><%= student.course_of_study %></td>
+			<td><button></button></td>
+			<td><button></button></td>
+		</tr>
+	<% }); %>
+</table>

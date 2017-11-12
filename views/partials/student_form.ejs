@@ -1,12 +1,23 @@
-<form method="post" action="/create">
 
-	<input type="text" name="student_name" id="student_name" placeholder="What is your name?" required="True">
 
-	<input type="text" name="school_name" id="school_name" placeholder="What is the name of your school?" required="True">
+<header>Welcome to InfoSchool
+	<p>... your school infomation management system.</p>
+	<hr>
+	<p>Fill the form below.</p>
+</header>
 
-	<input type="text" name="year_of_study" id="year_of_study" placeholder="What level are you in?" required="True">	
+<form id="form" class="topBefore" method="POST" action="/students">
+		
+  
+   <input type="text" name="student_name" id="student_name" placeholder="What is your name?" required="True">
 
-	<input type="text" name="" id="course_of_study" placeholder="What course are you studying?" required="True">	
+   <input type="text" name="school_name" id="school_name" placeholder="What is the name of your school?" required="True">
+ 
+   <input type="text" name="year_of_study" id="year_of_study" placeholder="What level are you in?" required="True">	
 
-	<input type="submit" name="create" placeholder="Save information">
+   <input type="text" name="course_of_study" id="course_of_study" placeholder="What course are you studying?" required="True">	
+
+   <input id="submit" type="submit" value="Save information">
+   
+  
 </form>
