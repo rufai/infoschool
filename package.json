@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "server.js",
   "keywords": [
     "school",
     "information",
@@ -17,6 +18,10 @@
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^1.12.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rufai/infoschool"
   },
   "dependencies": {
     "express": "^4.16.2",
